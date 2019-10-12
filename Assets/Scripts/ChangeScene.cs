@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    const int totalScenes = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,31 +22,27 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene(index + 1);
             index++;
         }
-        if (index != 0)
+        
+        // Testing uses of escape
+        if (Input.GetKeyDown("escape"))
         {
-            if (Input.GetKeyDown("escape"))
+
+            switch (index)
             {
-                SceneManager.LoadScene(4);
+                case 0:
+                    Application.Quit();
+                    break;
+                case 3:
+                    SceneManager.LoadScene(4);
+                    break;
+                case 4:
+                    SceneManager.LoadScene(3);
+                    break;
+
             }
         }
         
 
-        if (index == 0) {
-
-            
-
-            if (Input.GetKeyDown("escape"))
-            {
-                Application.Quit();
-            }
-        }
-
-        if (index == 4)
-        {
-            if (Input.GetKeyDown("escape"))
-            {
-                SceneManager.LoadScene(3);
-            }
-        }
+        
     }
 }
