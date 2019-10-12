@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class titleScreen_menu_selector : MonoBehaviour
 {
-    const int totalOptions = 3;
+    const int totalOptions = 4;
     int currentOptionsIndex;
     // Start is called before the first frame update
     void Start()
@@ -50,11 +50,16 @@ public class titleScreen_menu_selector : MonoBehaviour
             if(currentOptionsIndex == 0)
             {
                 //load the gameplay screen
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(1);
             }else if(currentOptionsIndex == 1)
             {
+                //loads the practice mode
+                SceneManager.LoadScene(2);
+            }
+            else if(currentOptionsIndex == 2)
+            {
                 //load the instructions screen
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3);
             }
             else
             {

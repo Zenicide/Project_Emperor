@@ -42,7 +42,13 @@ public class ChangeScene : MonoBehaviour
             }
         }
         
-
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (index == 5)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
         
     }
 }

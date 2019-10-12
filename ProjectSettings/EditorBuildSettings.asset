@@ -9,21 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/titleScreen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/instructionScreen.unity
-    guid: af5912bec6ef4b9459426e63f0538c8a
-  - enabled: 1
-    path: Assets/Scenes/playerSelectScreen.unity
-    guid: 61904308236f13547805f6211c872912
-  - enabled: 1
     path: Assets/Scenes/playScreen.unity
     guid: 6ca9d3b9c9962e343886560e9ac7d462
+  - enabled: 1
+    path: Assets/Scenes/practiceScreen.unity
+    guid: e9a73d74bfecb044a83da8aceba14b77
+  - enabled: 1
+    path: Assets/Scenes/instructionScreen.unity
+    guid: af5912bec6ef4b9459426e63f0538c8a
   - enabled: 1
     path: Assets/Scenes/pauseScreen.unity
     guid: 7912a8bf306f0544da600e975f7371b9
   - enabled: 1
     path: Assets/Scenes/winScreen.unity
     guid: a43c60c18795cca429de296f0c10f610
-  - enabled: 1
-    path: Assets/Scenes/loseScreen.unity
-    guid: aa168c13a7eb0824dbc29bd4d418a750
   m_configObjects: {}
