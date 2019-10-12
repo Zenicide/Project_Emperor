@@ -17,6 +17,8 @@ public class Character : MonoBehaviour
     public Vector2 position;
     public Vector2 velocity;
 
+    public bool jumped;
+
     public List<Sprite> sprites;
     public enum currentState
     {
@@ -35,9 +37,9 @@ public class Character : MonoBehaviour
             leftOrRight = "left";
         }
         position = transform.position;
-        velocity = new Vector2(.1f, 0);
+        velocity = new Vector2(.1f, 1.2f); //change values to change speed
 
-
+        jumped = false;
 
     }
 
@@ -45,6 +47,15 @@ public class Character : MonoBehaviour
     void Update()
     {
         InputKeys();
+        if (jumped == true)
+        {
+            position.y -= Time.deltaTime * 3;
+            if (position.y <= 0)
+            {
+                position.y = 0;
+                jumped = false;
+            }
+        }
         transform.position = position;
     }
 
@@ -52,13 +63,10 @@ public class Character : MonoBehaviour
     {
         if (player == "one")
         {
-            if (Input.GetKey(KeyCode.W)) //up
+            if (Input.GetKey(KeyCode.W) && jumped == false) //up
             {
-
-            }
-            if (Input.GetKey(KeyCode.S)) //down
-            {
-                
+                jumped = true;
+                position.y += velocity.y;
             }
             if (Input.GetKey(KeyCode.A)) //left
             {
@@ -85,19 +93,15 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow)) //up
             {
-
-            }
-            if (Input.GetKey(KeyCode.DownArrow)) //down
-            {
-
+                position.y += velocity.y;
             }
             if (Input.GetKey(KeyCode.LeftArrow)) //left
             {
-                position.x *= velocity.x;
+                position.x -= velocity.x;
             }
             if (Input.GetKey(KeyCode.RightArrow)) //right
             {
-                position.x *= -velocity.x;
+                position.x += -velocity.x;
             }
             if (Input.GetKey(KeyCode.Keypad1))
             {
