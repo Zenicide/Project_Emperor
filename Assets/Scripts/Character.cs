@@ -35,7 +35,7 @@ public class Character : MonoBehaviour
             leftOrRight = "left";
         }
         position = transform.position;
-        velocity = new Vector2(0, 0);
+        velocity = new Vector2(.1f, 0);
 
 
 
@@ -62,11 +62,11 @@ public class Character : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A)) //left
             {
-                position.x *= velocity.x;
+                position.x -= velocity.x;
             }
             if (Input.GetKey(KeyCode.D)) //right
             {
-                position.x *= -velocity.x;
+                position.x += velocity.x;
             }
             if (Input.GetKey(KeyCode.J))
             {
