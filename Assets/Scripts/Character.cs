@@ -17,6 +17,12 @@ public class Character : MonoBehaviour
     public Vector2 position;
     public Vector2 velocity;
 
+    public List<Sprite> sprites;
+    public enum currentState
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,8 @@ public class Character : MonoBehaviour
             leftOrRight = "left";
         }
         position = transform.position;
+        velocity = new Vector2(0, 0);
+
 
 
     }
@@ -37,27 +45,28 @@ public class Character : MonoBehaviour
     void Update()
     {
         InputKeys();
+        transform.position = position;
     }
 
     void InputKeys()
     {
         if (player == "one")
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W)) //up
             {
 
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.S)) //down
             {
-
+                
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.A)) //left
             {
-
+                position.x *= velocity.x;
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D)) //right
             {
-
+                position.x *= -velocity.x;
             }
             if (Input.GetKey(KeyCode.J))
             {
@@ -74,21 +83,21 @@ public class Character : MonoBehaviour
         }
         else if (player == "two")
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow)) //up
             {
 
             }
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.DownArrow)) //down
             {
 
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.LeftArrow)) //left
             {
-
+                position.x *= velocity.x;
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow)) //right
             {
-
+                position.x *= -velocity.x;
             }
             if (Input.GetKey(KeyCode.Keypad1))
             {
