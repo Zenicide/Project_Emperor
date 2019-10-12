@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class titleScreen_menu_selector : MonoBehaviour
 {
@@ -42,6 +43,24 @@ public class titleScreen_menu_selector : MonoBehaviour
                 gameObject.transform.Translate(new Vector3(0, 0.5f, 0));
             }
             currentOptionsIndex--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if(currentOptionsIndex == 0)
+            {
+                //load the gameplay screen
+                SceneManager.LoadScene(3);
+            }else if(currentOptionsIndex == 1)
+            {
+                //load the instructions screen
+                SceneManager.LoadScene(1);
+            }
+            else
+            {
+                //closes the game
+                Application.Quit();
+            }
         }
     }
 }

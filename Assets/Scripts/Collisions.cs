@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    GameObject playerOne;
+    GameObject playerTwo;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,10 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void Boundaries()
+    {
+
     }
 }
