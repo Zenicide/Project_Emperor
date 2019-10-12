@@ -1,28 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Windows;
+using UnityEngine.SceneManagement;
 
 public class timerHandle : MonoBehaviour
 {
-
-    public double time = 90;
-    public int displayTime = 90;
+    int time = 99;
+    int frames = 60;
+    public string timeLeft;
     // Start is called before the first frame update
     void Start()
     {
-
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (time >= 0) {
-            time -= 0.01;
+        if (time == 0)
+        {
+            SceneManager.LoadScene(5);
+        }
+        else
+        {
+            frames--;
+            if (frames == 0)
+            {
+                time--;
+                frames = 60;
+            }
         }
 
-        if (time % 1 == 0)
-        {
-            displayTime = (int)time;
-        }
+        timeLeft = time.ToString();
+
     }
+
+    
 }
