@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
         if (player == "one")
         {
             leftOrRight = "right";
-            transform.position = new Vector2(0, 0);
+            transform.position = new Vector2(0, -2);
         }
         else if (player == "two")
         {
