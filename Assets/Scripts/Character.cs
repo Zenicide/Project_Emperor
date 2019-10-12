@@ -60,6 +60,11 @@ public class Character : MonoBehaviour
         transform.position = position;
     }
 
+    void TakeDamage(GameObject enemy)
+    {
+        health -= enemy.GetComponent<Character>().damageMultiplier;
+    }
+
     void InputKeys()
     {
         if (player == "one")
