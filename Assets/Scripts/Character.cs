@@ -17,8 +17,24 @@ public class Character : MonoBehaviour
     public bool isFacingRight = true;
     public bool jumped;
 
-    public List<Sprite> sprites;
     public GameObject projectile;
+
+    public BoxCollider2D punchCollider;
+    public BoxCollider2D kickCollider;
+    public BoxCollider2D projCollider;
+
+    //internal cooldown timer so they can't do the same action again
+    const int resetCooldownTimer = 4;
+    int player1PunchTimer;
+    int player1KickTimer;
+    int player1ProjTimer;
+    bool player1ProjAnim = false;
+
+    int player2PunchTimer;
+    int player2KickTimer;
+    int player2ProjTimer;
+    bool player2ProjAnim = false;
+
     public enum currentState
     {
         Idle,
@@ -46,6 +62,15 @@ public class Character : MonoBehaviour
         velocity = new Vector2(.1f, 1.2f); //change values to change speed
 
         jumped = false;
+
+        //setting timers for each action
+        player1PunchTimer = 4;
+        player1KickTimer = 4;
+        player1ProjTimer = 4;
+
+        player2PunchTimer = 4;
+        player2KickTimer = 4;
+        player2ProjTimer = 4;
 
     }
 
@@ -87,18 +112,63 @@ public class Character : MonoBehaviour
             {
                 position.x += velocity.x;
             }
-            if (Input.GetKey(KeyCode.J))
-            {
 
-            }
-            if (Input.GetKey(KeyCode.K))
+            //detects if the player is trying to punch and the player is able to punch(not already in animation)
+            if (Input.GetKey(KeyCode.J) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
-
+                punchCollider.enabled = true;
             }
-            if (Input.GetKey(KeyCode.L))
+            //checks if punch collider is active 
+            if (punchCollider.enabled)
             {
-
+                player1PunchTimer--;
             }
+            //checks if the player's punch timer is at 0
+            if (player1PunchTimer == 0)
+            {
+                //resets the punch collider to be false and reset the punch timer so it can be used again
+                punchCollider.enabled = false;
+                player1PunchTimer = resetCooldownTimer;
+            }
+
+
+            if (Input.GetKey(KeyCode.K) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            {
+                kickCollider.enabled = true;
+            }
+            //checks if kick collider is active 
+            if (kickCollider.enabled)
+            {
+                player1KickTimer--;
+            }
+            //checks if the player's kick timer is at 0
+            if (player1KickTimer == 0)
+            {
+                //resets the kick collider to be false and reset the kick timer so it can be used again
+                kickCollider.enabled = false;
+                player1KickTimer = resetCooldownTimer;
+            }
+
+
+            if (Input.GetKey(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            {
+                Instantiate(projectile);
+                player1ProjAnim = true;
+            }
+            //checks to see if the player is in the projectile throwing animation
+            if (player1ProjAnim)
+            {
+                player1ProjTimer--;
+            }
+            //checks to see if the player's proj timer is at 0
+            if(player1ProjTimer == 0)
+            {
+                //reset the animation and the timer for the projectile animation
+                player1ProjTimer = resetCooldownTimer;
+                player1ProjAnim = false;
+            }
+
+            
         }
         else if (player == 2)
         {
@@ -115,17 +185,58 @@ public class Character : MonoBehaviour
             {
                 position.x += velocity.x;
             }
-            if (Input.GetKey(KeyCode.Keypad1))
+            if (Input.GetKey(KeyCode.Keypad1) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
             {
-
+                punchCollider.enabled = true;
             }
-            if (Input.GetKey(KeyCode.Keypad2))
+            //checks if punch collider is active 
+            if (punchCollider.enabled)
             {
-
+                player2PunchTimer--;
             }
-            if (Input.GetKey(KeyCode.Keypad3))
+            //checks if the player's punch timer is at 0
+            if (player2PunchTimer == 0)
             {
+                //resets the punch collider to be false and reset the punch timer so it can be used again
+                punchCollider.enabled = false;
+                player2PunchTimer = resetCooldownTimer;
+            }
 
+
+            if (Input.GetKey(KeyCode.Keypad2) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
+            {
+                kickCollider.enabled = true;
+            }
+            //checks if kick collider is active 
+            if (kickCollider.enabled)
+            {
+                player2KickTimer--;
+            }
+            //checks if the player's kick timer is at 0
+            if (player2KickTimer == 0)
+            {
+                //resets the kick collider to be false and reset the kick timer so it can be used again
+                kickCollider.enabled = false;
+                player2KickTimer = resetCooldownTimer;
+            }
+
+
+            if (Input.GetKey(KeyCode.Keypad3) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
+            {
+                Instantiate(projectile);
+                player2ProjAnim = true;
+            }
+            //checks to see if the player is in the projectile throwing animation
+            if (player2ProjAnim)
+            {
+                player2ProjTimer--;
+            }
+            //checks to see if the player's proj timer is at 0
+            if (player2ProjTimer == 0)
+            {
+                //reset the animation and the timer for the projectile animation
+                player2ProjTimer = resetCooldownTimer;
+                player2ProjAnim = false;
             }
         }
     }

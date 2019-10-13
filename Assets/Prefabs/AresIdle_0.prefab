@@ -105,6 +105,8 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   isFacingRight: 1
   jumped: 0
+  punchCollider: {fileID: 947789427247277307}
+  kickCollider: {fileID: 8136749940025305437}
   sprites: []
   projectile: {fileID: 0}
 --- !u!95 &3266826672243226225
@@ -190,7 +192,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660541722095696812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -247,7 +249,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5158309595159077126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
