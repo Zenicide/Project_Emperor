@@ -268,16 +268,16 @@ public class Character : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "punch")
         {
+            Debug.Log("Hit");
             //Take Damage
             health -= 3000;
-            if(isFacingRight)
+            if (isFacingRight)
             {
-                transform.Translate(new Vector3(-0.05f, 0, 0));
+                transform.Translate(new Vector3(-100000f, 0, 0));
             }
             else
             {
@@ -297,7 +297,7 @@ public class Character : MonoBehaviour
                 transform.Translate(new Vector3(0.08f, 0, 0));
             }
         }
-        if(collision.gameObject.name == "proj")
+        if (collision.gameObject.name == "proj")
         {
             //take damage
             health -= 5;
