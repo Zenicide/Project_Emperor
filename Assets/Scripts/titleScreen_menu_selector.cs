@@ -23,11 +23,11 @@ public class titleScreen_menu_selector : MonoBehaviour
             if (currentOptionsIndex == totalOptions)
             {
                 currentOptionsIndex = 0;
-                gameObject.transform.Translate(new Vector3(0, (totalOptions - 1) * 0.5f, 0));
+                gameObject.transform.Translate(new Vector3(0, (totalOptions - 1) * 0.68f, 0));
             }
             else
             {
-                gameObject.transform.Translate(new Vector3(0, -0.5f, 0));
+                gameObject.transform.Translate(new Vector3(0, -0.68f, 0));
             }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -36,11 +36,11 @@ public class titleScreen_menu_selector : MonoBehaviour
             if(currentOptionsIndex == 0)
             {
                 currentOptionsIndex = totalOptions;
-                gameObject.transform.Translate(new Vector3(0, (totalOptions - 1) * -0.5f, 0));
+                gameObject.transform.Translate(new Vector3(0, (totalOptions - 1) * -0.68f, 0));
             }
             else
             {
-                gameObject.transform.Translate(new Vector3(0, 0.5f, 0));
+                gameObject.transform.Translate(new Vector3(0, 0.68f, 0));
             }
             currentOptionsIndex--;
         }
