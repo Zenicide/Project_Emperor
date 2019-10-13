@@ -82,6 +82,7 @@ public class Character : MonoBehaviour
     void Update()
     {
         InputKeys();
+        Bounds();
         transform.position = position;
     }
 
@@ -309,6 +310,18 @@ public class Character : MonoBehaviour
             {
                 transform.Translate(new Vector3(0.1f, 0, 0));
             }
+        }
+    }
+
+    void Bounds()
+    {
+        if (position.x <= - 8)
+        {
+            position.x += velocity.x;
+        }
+        else if (position.x >= 8)
+        {
+            position.x -= velocity.x;
         }
     }
 }

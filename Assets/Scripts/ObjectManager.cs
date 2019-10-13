@@ -9,7 +9,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject playerTwoPrefab;
     public GameObject healthPrefab;
     public GameObject healthBarPrefab;
-    public Text timePrefab;
+    public Text time;
     [SerializeField]
     BoxCollider2D punchCol;
     GameObject playerOne;
@@ -18,7 +18,6 @@ public class ObjectManager : MonoBehaviour
     GameObject healthTwo;
     GameObject healthBarOne;
     GameObject healthBarTwo;
-    Text time;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +32,8 @@ public class ObjectManager : MonoBehaviour
         healthOne.transform.localScale = new Vector2(playerOne.GetComponent<Character>().health / 100, healthOne.transform.localScale.y); //change x later to change health
         //healthOne.transform.position = new Vector2(healthOne.transform.position.x - .01f, healthOne.transform.position.y);
         healthTwo.transform.localScale = new Vector2(playerTwo.GetComponent<Character>().health / 100, healthTwo.transform.localScale.y);
-        
         time.text = time.GetComponent<timerHandle>().timeString;
+        FacingRight();
     }
 
     void SpawnCharacter()
@@ -57,17 +56,31 @@ public class ObjectManager : MonoBehaviour
     {
         //health bar one
         healthBarOne = Instantiate(healthBarPrefab);
-        healthBarOne.transform.position = new Vector2(-6, 4);
+        healthBarOne.transform.position = new Vector2(-5.2f, 4);
         healthOne = Instantiate(healthPrefab);
-        healthOne.transform.position = new Vector2(-6, 4);
+        healthOne.transform.position = new Vector2(-5.2f, 4);
         //health bar two
         healthBarTwo = Instantiate(healthBarPrefab);
-        healthBarTwo.transform.position = new Vector2(6, 4);
+        healthBarTwo.transform.position = new Vector2(5.2f, 4);
         healthTwo = Instantiate(healthPrefab);
-        healthTwo.transform.position = new Vector2(6, 4);
-        //time
-        time = Instantiate(timePrefab);
-        time.transform.position = new Vector2(2, 0);
-        time.text = "99";
+        healthTwo.transform.position = new Vector2(5.2f, 4);
+    }
+
+    void FacingRight()
+    {
+        if (playerOne.transform.position.x < playerTwo.transform.position.x)
+        {
+            playerOne.GetComponent<SpriteRenderer>().flipX = false;
+            playerOne.GetComponent<Character>().isFacingRight = true;
+            playerTwo.GetComponent<SpriteRenderer>().flipX = true;
+            playerTwo.GetComponent<Character>().isFacingRight = false;
+        }
+        else if (playerOne.transform.position.x > playerTwo.transform.position.x)
+        {
+            playerOne.GetComponent<SpriteRenderer>().flipX = true;
+            playerOne.GetComponent<Character>().isFacingRight = false;
+            playerTwo.GetComponent<SpriteRenderer>().flipX = false;
+            playerTwo.GetComponent<Character>().isFacingRight = true;
+        }
     }
 }
