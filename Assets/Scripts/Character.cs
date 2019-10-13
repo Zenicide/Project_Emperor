@@ -51,9 +51,9 @@ public class Character : MonoBehaviour
         if (jumped == true)
         {
             position.y -= Time.deltaTime * 3;
-            if (position.y <= 0)
+            if (position.y <= -2)
             {
-                position.y = 0;
+                position.y = -2;
                 jumped = false;
             }
         }
