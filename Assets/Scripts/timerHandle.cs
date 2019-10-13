@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class timerHandle : MonoBehaviour
 {
     // set time and allow for it to be seen in a label
-    int time;
+    public int time;
     public string timeString;
     int frames;
     // Start is called before the first frame update

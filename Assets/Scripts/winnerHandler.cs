@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class winnerHandler : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class winnerHandler : MonoBehaviour
     public GameObject Player2;
     Character Player1Char;
     Character Player2Char;
+    public Text time;
 
     // Start is called before the first frame update
     void Start()
@@ -22,22 +24,23 @@ public class winnerHandler : MonoBehaviour
     {
         if (Player1Char.health <= 0)
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(5);
         }
         if (Player2Char.health <= 0)
         {
+            SceneManager.LoadScene(4);
+        }
+        if (Player1Char.health < Player2Char.health && time.GetComponent<timerHandle>().time <= 0)
+        {
             SceneManager.LoadScene(5);
         }
-        if (Player1Char.health < Player2Char.health)
+        if (Player1Char.health > Player2Char.health && time.GetComponent<timerHandle>().time <= 0)
         {
-            SceneManager.LoadScene(6);
-
-        } else if (Player1Char.health > Player2Char.health)
+            SceneManager.LoadScene(4);
+        }
+        if (Player1Char.health == Player2Char.health && time.GetComponent<timerHandle>().time <= 0)
         {
-            SceneManager.LoadScene(5);
-        } else if (Player1Char.health == Player2Char.health)
-        {
-            int randomWinner = Random.Range(5, 6);
+            int randomWinner = Random.Range(4, 6);
             SceneManager.LoadScene(randomWinner);
         }
     }

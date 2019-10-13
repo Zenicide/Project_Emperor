@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ObjectManager : MonoBehaviour
@@ -32,10 +33,31 @@ public class ObjectManager : MonoBehaviour
     {
         time.text = time.GetComponent<timerHandle>().timeString;
         FacingRight();
-        //healthOne.transform.position = new Vector2(healthOne.transform.position.x + (playerOne.GetComponent<Character>().health - 100) / 100, healthOne.transform.position.y);
 
         healthOne.transform.position = new Vector2(-5.1f + 7.7f / 100 * (playerOne.GetComponent<Character>().health - 100), healthOne.transform.position.y);
         healthTwo.transform.position = new Vector2(5.1f + 7.7f / 100 * (100 - playerTwo.GetComponent<Character>().health), healthTwo.transform.position.y);
+
+        if (playerOne.GetComponent<Character>().health <= 0)
+        {
+            SceneManager.LoadScene(5);
+        }
+        if (playerTwo.GetComponent<Character>().health <= 0)
+        {
+            SceneManager.LoadScene(4);
+        }
+        if (playerOne.GetComponent<Character>().health < playerTwo.GetComponent<Character>().health && time.GetComponent<timerHandle>().time <= 0)
+        {
+            SceneManager.LoadScene(5);
+        }
+        if (playerOne.GetComponent<Character>().health > playerTwo.GetComponent<Character>().health && time.GetComponent<timerHandle>().time <= 0)
+        {
+            SceneManager.LoadScene(4);
+        }
+        if (playerOne.GetComponent<Character>().health == playerTwo.GetComponent<Character>().health && time.GetComponent<timerHandle>().time <= 0)
+        {
+            int randomWinner = Random.Range(4, 6);
+            SceneManager.LoadScene(randomWinner);
+        }
     }
 
     void SpawnCharacter()
