@@ -105,10 +105,10 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   isFacingRight: 1
   jumped: 0
+  projectile: {fileID: 2811167773423628385, guid: b8ea51e728ff26846a8481c1050ac844,
+    type: 3}
   punchCollider: {fileID: 947789427247277307}
   kickCollider: {fileID: 8136749940025305437}
-  sprites: []
-  projectile: {fileID: 0}
 --- !u!95 &3266826672243226225
 Animator:
   serializedVersion: 3

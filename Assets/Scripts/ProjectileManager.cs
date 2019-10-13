@@ -19,6 +19,8 @@ public class ProjectileManager : MonoBehaviour
     float projMinY;
     float projMaxY;
 
+    public BoxCollider2D projCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class ProjectileManager : MonoBehaviour
         {
             projVelocity = -1;
         }
+
+
         projRender = Proj.GetComponent<SpriteRenderer>();
         projCenterXBound = projRender.bounds.center.x;
         projCenterYBound = projRender.bounds.center.y;
@@ -46,5 +50,13 @@ public class ProjectileManager : MonoBehaviour
     void Update()
     {
         gameObject.transform.Translate(new Vector3(projVelocity, 0, 0));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Ares" || collision.gameObject.name == "Zeus")
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
 
     public BoxCollider2D punchCollider;
     public BoxCollider2D kickCollider;
-    public BoxCollider2D projCollider;
+    BoxCollider2D projCollider;
 
     //internal cooldown timer so they can't do the same action again
     const int resetCooldownTimer = 4;
@@ -152,7 +152,21 @@ public class Character : MonoBehaviour
 
             if (Input.GetKey(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
+                //get current player position
+                Vector3 startProj = transform.position;
+
+                if (isFacingRight)
+                {
+                    startProj.x += 0.5f;
+                }
+                else
+                {
+                    startProj.x -= 0.5f;
+                }
+
+
                 Instantiate(projectile);
+                projCollider = projectile.GetComponent<BoxCollider2D>();
                 player1ProjAnim = true;
             }
             //checks to see if the player is in the projectile throwing animation
@@ -224,6 +238,7 @@ public class Character : MonoBehaviour
             if (Input.GetKey(KeyCode.Keypad3) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
             {
                 Instantiate(projectile);
+                projCollider = projectile.GetComponent<BoxCollider2D>();
                 player2ProjAnim = true;
             }
             //checks to see if the player is in the projectile throwing animation
