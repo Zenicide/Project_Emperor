@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class timerHandle : MonoBehaviour
 {
+    // set time and allow for it to be seen in a label
     int time = 99;
     int frames = 60;
     public string timeLeft;
@@ -22,7 +23,7 @@ public class timerHandle : MonoBehaviour
         {
             SceneManager.LoadScene(5);
         }
-        else
+        else // tick down time using frames, preferably 60 fps
         {
             frames--;
             if (frames == 0)
