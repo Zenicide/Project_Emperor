@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
 
     public Vector2 position;
     public Vector2 velocity;
+    const float deceleration = 0.2f;
 
     public bool isFacingRight = true;
     public bool jumped;
