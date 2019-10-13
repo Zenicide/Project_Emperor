@@ -41,7 +41,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.34056923, y: 0.13133074}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.37395838, y: -0.14691208}
@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 455114664924339892}
   - component: {fileID: 2167185200467778813}
   - component: {fileID: 2481625034543547610}
+  - component: {fileID: 8041266408222858880}
   m_Layer: 0
   m_Name: Zeus_0
   m_TagString: Untagged
@@ -220,9 +221,9 @@ MonoBehaviour:
   jumped: 0
   projectile: {fileID: 2811167773423628385, guid: b8ea51e728ff26846a8481c1050ac844,
     type: 3}
+  projectiles: []
   punchCollider: {fileID: 8405737297269369852}
   kickCollider: {fileID: 5144043389283747472}
-  projCollider: {fileID: 0}
 --- !u!61 &2481625034543547610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -249,3 +250,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24597466, y: 1.04}
   m_EdgeRadius: 0
+--- !u!50 &8041266408222858880
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890006859745632462}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
