@@ -102,7 +102,7 @@ public class Character : MonoBehaviour
         }
         else if (player == 2)
         {
-            if (Input.GetKey(KeyCode.UpArrow)) //up
+            if (Input.GetKey(KeyCode.UpArrow) && !jumped) //up
             {
                 jumped = true;
                 position.y += velocity.y;
@@ -136,15 +136,41 @@ public class Character : MonoBehaviour
         if (collision.gameObject.name == "punch")
         {
             //Take Damage
-
+            health -= 3;
+            if(isFacingRight)
+            {
+                transform.Translate(new Vector3(-0.05f, 0, 0));
+            }
+            else
+            {
+                transform.Translate(new Vector3(0.05f, 0, 0));
+            }
         }
         if (collision.gameObject.name == "kick")
         {
             //Take Damage
+            health -= 5;
+            if (isFacingRight)
+            {
+                transform.Translate(new Vector3(-0.08f, 0, 0));
+            }
+            else
+            {
+                transform.Translate(new Vector3(0.08f, 0, 0));
+            }
         }
         if(collision.gameObject.name == "proj")
         {
             //take damage
+            health -= 5;
+            if (isFacingRight)
+            {
+                transform.Translate(new Vector3(-0.1f, 0, 0));
+            }
+            else
+            {
+                transform.Translate(new Vector3(0.1f, 0, 0));
+            }
         }
     }
 }

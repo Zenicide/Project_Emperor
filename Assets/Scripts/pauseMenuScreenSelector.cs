@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class titleScreen_menu_selector : MonoBehaviour
+public class pauseMenuScreenSelector : MonoBehaviour
 {
-    const int totalOptions = 4;
+    const int totalOptions = 2;
     int currentOptionsIndex;
     // Start is called before the first frame update
     void Start()
@@ -51,20 +51,10 @@ public class titleScreen_menu_selector : MonoBehaviour
             {
                 //load the gameplay screen
                 SceneManager.LoadScene(1);
-            }else if(currentOptionsIndex == 1)
+            }else
             {
                 //loads the practice mode
-                SceneManager.LoadScene(2);
-            }
-            else if(currentOptionsIndex == 2)
-            {
-                //load the instructions screen
-                SceneManager.LoadScene(3);
-            }
-            else
-            {
-                //closes the game
-                Application.Quit();
+                SceneManager.LoadScene(0);
             }
         }
     }
