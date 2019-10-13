@@ -31,10 +31,11 @@ public class ObjectManager : MonoBehaviour
     void Update()
     {
         playerOne.GetComponent<Character>().health -= 1;
-
+        
         healthOne.transform.localScale = new Vector2(playerOne.GetComponent<Character>().health / 100, healthOne.transform.localScale.y); //change x later to change health
         //healthOne.transform.position = new Vector2(healthOne.transform.position.x - .01f, healthOne.transform.position.y);
         healthTwo.transform.localScale = new Vector2(playerTwo.GetComponent<Character>().health / 100, healthTwo.transform.localScale.y);
+        
         time.text = time.GetComponent<timerHandle>().timeString;
     }
 
