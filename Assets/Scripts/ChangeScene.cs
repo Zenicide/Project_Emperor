@@ -35,20 +35,10 @@ public class ChangeScene : MonoBehaviour
 
                 // Play screen to pause screen
                 case 1:
-                    SceneManager.LoadScene(4);
-                    break;
-                    // Practice screen to title screen
                 case 2:
-                    SceneManager.LoadScene(0);
-                    break;
-                    // Instructions to title screen
                 case 3:
-                    SceneManager.LoadScene(0);
-                    break;
-
-                    // Pause to play screen
                 case 4:
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(0);
                     break;
 
             }
