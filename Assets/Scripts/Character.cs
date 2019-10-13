@@ -93,26 +93,31 @@ public class Character : MonoBehaviour
         transform.position = position;
     }
 
-    void TakeDamage(float damage)
-    {
-        health -= damage;
-    }
-
     void InputKeys()
     {
         if (player == 1)
         {
-            if (Input.GetKey(KeyCode.W) && jumped == false) //up
+            if (Input.GetKey(KeyCode.W) && !jumped) //up
             {
                 jumped = true;
                 position.y += velocity.y;
             }
             if (Input.GetKey(KeyCode.A)) //left
             {
+                if (isFacingRight)
+                {
+                    isFacingRight = !isFacingRight;
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
                 position.x -= velocity.x;
             }
             if (Input.GetKey(KeyCode.D)) //right
             {
+                if (!isFacingRight)
+                {
+                    isFacingRight = !isFacingRight;
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
                 position.x += velocity.x;
             }
 
@@ -198,10 +203,20 @@ public class Character : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow)) //left
             {
                 position.x -= velocity.x;
+                if (isFacingRight)
+                {
+                    isFacingRight = !isFacingRight;
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
             }
             if (Input.GetKey(KeyCode.RightArrow)) //right
             {
                 position.x += velocity.x;
+                if (!isFacingRight)
+                {
+                    isFacingRight = !isFacingRight;
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
             }
             if (Input.GetKey(KeyCode.Keypad1) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
             {
