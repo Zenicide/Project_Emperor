@@ -46,7 +46,8 @@ public class ChangeScene : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (index == 5)
+            // If on win screen or instruction screen, press enter to return to menu
+            if (index == 5 || index == 3)
             {
                 SceneManager.LoadScene(0);
             }
