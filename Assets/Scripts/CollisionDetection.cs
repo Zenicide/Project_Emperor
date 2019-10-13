@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -21,4 +22,11 @@ public class CollisionDetection : MonoBehaviour
     {
         return (p1MaxX > p2MinX && p1MinX < p2MaxX && p1MaxY > p2MinY && p1MinY < p2MaxY);
     }
+
+    //p1s are the attacking collider and p2s are the opposing player body collider
+    public bool AttackToPlayerCollision(float p1MaxX, float p1MinX, float p1MaxY, float p1MinY, float p2MaxX, float p2MinX, float p2MaxY, float p2MinY)
+    {
+        return (p1MaxX > p2MinX && p1MinX < p2MaxX && p1MaxY > p2MinY && p1MinY < p2MaxY);
+    }
+
 }
