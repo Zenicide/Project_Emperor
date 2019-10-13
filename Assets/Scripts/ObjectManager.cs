@@ -19,6 +19,7 @@ public class ObjectManager : MonoBehaviour
     GameObject healthBarOne;
     GameObject healthBarTwo;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +30,12 @@ public class ObjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthOne.transform.localScale = new Vector2(playerOne.GetComponent<Character>().health / 100, healthOne.transform.localScale.y); //change x later to change health
-        //healthOne.transform.position = new Vector2(healthOne.transform.position.x - .01f, healthOne.transform.position.y);
-        healthTwo.transform.localScale = new Vector2(playerTwo.GetComponent<Character>().health / 100, healthTwo.transform.localScale.y);
         time.text = time.GetComponent<timerHandle>().timeString;
         FacingRight();
+        //healthOne.transform.position = new Vector2(healthOne.transform.position.x + (playerOne.GetComponent<Character>().health - 100) / 100, healthOne.transform.position.y);
+
+        healthOne.transform.position = new Vector2(-5.1f + 7.7f / 100 * (playerOne.GetComponent<Character>().health - 100), healthOne.transform.position.y);
+        healthTwo.transform.position = new Vector2(5.1f + 7.7f / 100 * (100 - playerTwo.GetComponent<Character>().health), healthTwo.transform.position.y);
     }
 
     void SpawnCharacter()

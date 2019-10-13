@@ -275,7 +275,7 @@ public class Character : MonoBehaviour
         {
             Debug.Log("Hit");
             //Take Damage
-            health -= 3000;
+            health -= 3;
             if (isFacingRight)
             {
                 transform.Translate(new Vector3(-100000f, 0, 0));
