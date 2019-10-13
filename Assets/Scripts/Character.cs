@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     public bool jumped;
 
     public GameObject projectile;
+    public List<GameObject> projectiles;
 
     public BoxCollider2D punchCollider;
     public BoxCollider2D kickCollider;
@@ -71,6 +72,8 @@ public class Character : MonoBehaviour
         player2PunchTimer = 4;
         player2KickTimer = 4;
         player2ProjTimer = 4;
+
+        projectiles = new List<GameObject>();
 
     }
 
@@ -153,7 +156,7 @@ public class Character : MonoBehaviour
             if (Input.GetKey(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 //get current player position
-                Vector3 startProj = transform.position;
+                Vector2 startProj = transform.position;
 
                 if (isFacingRight)
                 {
@@ -165,7 +168,8 @@ public class Character : MonoBehaviour
                 }
 
 
-                Instantiate(projectile);
+                projectiles.Add(Instantiate(projectile));
+                projectiles[0].transform.position = startProj;
                 projCollider = projectile.GetComponent<BoxCollider2D>();
                 player1ProjAnim = true;
             }
