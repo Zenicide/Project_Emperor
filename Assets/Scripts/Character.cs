@@ -10,7 +10,6 @@ public class Character : MonoBehaviour
     public float health; //health of fighter
     public float damageMultiplier; //damage you multiply to character's attacks
     public float rageBar;
-    public Slider rageSlider; 
 
     public Vector2 position;
     public Vector2 velocity;
@@ -19,14 +18,19 @@ public class Character : MonoBehaviour
     public bool jumped;
 
     public List<Sprite> sprites;
+    public GameObject projectile;
     public enum currentState
     {
-
+        Idle,
+        Walk,
+        Kick,
+        Punch,
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        health = 100;
         if (player == 1)
         {
             isFacingRight = true;
@@ -61,9 +65,9 @@ public class Character : MonoBehaviour
         transform.position = position;
     }
 
-    void TakeDamage(GameObject enemy)
+    void TakeDamage(float damage)
     {
-        health -= enemy.GetComponent<Character>().damageMultiplier;
+        health -= damage;
     }
 
     void InputKeys()
