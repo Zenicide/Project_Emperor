@@ -6,7 +6,8 @@ public class ObjectManager : MonoBehaviour
 {
     public GameObject playerOnePrefab;
     public GameObject playerTwoPrefab;
-
+    [SerializeField]
+    BoxCollider2D punchCol;
     GameObject playerOne;
     GameObject playerTwo;
 

@@ -128,4 +128,17 @@ public class Character : MonoBehaviour
             }
         }
     }
-}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "punch")
+        {
+            //Take Damage
+
+        }
+        if (collision.gameObject.name == "kick")
+        {
+            //Take Damage
+        }
+    }
