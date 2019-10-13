@@ -142,5 +142,9 @@ public class Character : MonoBehaviour
         {
             //Take Damage
         }
+        if(collision.gameObject.name == "proj")
+        {
+            //take damage
+        }
     }
 }
