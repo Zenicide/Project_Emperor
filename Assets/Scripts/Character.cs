@@ -104,6 +104,7 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow)) //up
             {
+                jumped = true;
                 position.y += velocity.y;
             }
             if (Input.GetKey(KeyCode.LeftArrow)) //left
