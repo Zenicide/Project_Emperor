@@ -104,6 +104,7 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow)) //up
             {
+                jumped = true;
                 position.y += velocity.y;
             }
             if (Input.GetKey(KeyCode.LeftArrow)) //left
@@ -128,4 +129,17 @@ public class Character : MonoBehaviour
             }
         }
     }
-}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "punch")
+        {
+            //Take Damage
+
+        }
+        if (collision.gameObject.name == "kick")
+        {
+            //Take Damage
+        }
+    }
