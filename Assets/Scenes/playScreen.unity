@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11940701526ea95408875c407cf0be9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 
+  timeString: 
 --- !u!4 &1214694994
 Transform:
   m_ObjectHideFlags: 0
@@ -389,6 +389,13 @@ MonoBehaviour:
     type: 3}
   playerTwoPrefab: {fileID: 8890006859745632462, guid: 1f7533eedc3c5104ba939b490a7e84b9,
     type: 3}
+  healthPrefab: {fileID: 1810460935479836735, guid: b070c778e8c8f78498edd499bb3993df,
+    type: 3}
+  healthBarPrefab: {fileID: 5432880224134552318, guid: e7fb0ca5cc03ba7438b6ec5a99446c58,
+    type: 3}
+  timePrefab: {fileID: 7618683765218244390, guid: 15b9aa1e83a4b5241bcabec22f700263,
+    type: 3}
+  punchCol: {fileID: 0}
 --- !u!4 &1349947128
 Transform:
   m_ObjectHideFlags: 0

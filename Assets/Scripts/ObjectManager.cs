@@ -30,8 +30,6 @@ public class ObjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerOne.GetComponent<Character>().health -= 1;
-        
         healthOne.transform.localScale = new Vector2(playerOne.GetComponent<Character>().health / 100, healthOne.transform.localScale.y); //change x later to change health
         //healthOne.transform.position = new Vector2(healthOne.transform.position.x - .01f, healthOne.transform.position.y);
         healthTwo.transform.localScale = new Vector2(playerTwo.GetComponent<Character>().health / 100, healthTwo.transform.localScale.y);
@@ -58,15 +56,15 @@ public class ObjectManager : MonoBehaviour
     void SpawnUI()
     {
         //health bar one
-        healthOne = Instantiate(healthPrefab);
-        healthOne.transform.position = new Vector2(-6, 4);
         healthBarOne = Instantiate(healthBarPrefab);
         healthBarOne.transform.position = new Vector2(-6, 4);
+        healthOne = Instantiate(healthPrefab);
+        healthOne.transform.position = new Vector2(-6, 4);
         //health bar two
-        healthTwo = Instantiate(healthPrefab);
-        healthTwo.transform.position = new Vector2(6, 4);
         healthBarTwo = Instantiate(healthBarPrefab);
         healthBarTwo.transform.position = new Vector2(6, 4);
+        healthTwo = Instantiate(healthPrefab);
+        healthTwo.transform.position = new Vector2(6, 4);
         //time
         time = Instantiate(timePrefab);
         time.transform.position = new Vector2(2, 0);
