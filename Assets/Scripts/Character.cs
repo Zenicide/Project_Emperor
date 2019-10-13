@@ -281,7 +281,7 @@ public class Character : MonoBehaviour
         if (collision.gameObject.name == "punch")
         {
             //Take Damage
-            health -= 3;
+            health -= 3000;
             if(isFacingRight)
             {
                 transform.Translate(new Vector3(-0.05f, 0, 0));
