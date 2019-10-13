@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class timerHandle : MonoBehaviour
 {
     // set time and allow for it to be seen in a label
-    int time = 99;
-    int frames = 60;
-    public string timeLeft;
+    int time;
+    public string timeString;
+    int frames;
     // Start is called before the first frame update
     void Start()
     {
+        time = 99;
+        frames = 60;
         Application.targetFrameRate = 60;
     }
 
@@ -32,9 +34,7 @@ public class timerHandle : MonoBehaviour
                 frames = 60;
             }
         }
-
-        timeLeft = time.ToString();
-
+        timeString = time.ToString();
     }
 
     

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject playerTwoPrefab;
     public GameObject healthPrefab;
     public GameObject healthBarPrefab;
+    public Text timePrefab;
     [SerializeField]
     BoxCollider2D punchCol;
     GameObject playerOne;
@@ -16,19 +18,21 @@ public class ObjectManager : MonoBehaviour
     GameObject healthTwo;
     GameObject healthBarOne;
     GameObject healthBarTwo;
+    Text time;
 
     // Start is called before the first frame update
     void Start()
     {
         SpawnCharacter();
-        SpawnHealthBars();
+        SpawnUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthOne.transform.localScale = new Vector2(healthOne.transform.localScale.x, healthOne.transform.localScale.y); //change x later to change health
+        healthOne.transform.localScale = new Vector2(healthOne.transform.localScale.x - .001f, healthOne.transform.localScale.y); //change x later to change health
         healthTwo.transform.localScale = new Vector2(healthTwo.transform.localScale.x, healthTwo.transform.localScale.y);
+        time.text = time.GetComponent<timerHandle>().timeString;
     }
 
     void SpawnCharacter()
@@ -47,16 +51,21 @@ public class ObjectManager : MonoBehaviour
         playerTwo.GetComponent<Character>().player = 2;
     }
 
-    void SpawnHealthBars()
+    void SpawnUI()
     {
+        //health bar one
         healthOne = Instantiate(healthPrefab);
         healthOne.transform.position = new Vector2(-6, 4);
         healthBarOne = Instantiate(healthBarPrefab);
         healthBarOne.transform.position = new Vector2(-6, 4);
-
+        //health bar two
         healthTwo = Instantiate(healthPrefab);
         healthTwo.transform.position = new Vector2(6, 4);
         healthBarTwo = Instantiate(healthBarPrefab);
         healthBarTwo.transform.position = new Vector2(6, 4);
+        //time
+        time = Instantiate(timePrefab);
+        time.transform.position = new Vector2(2, 0);
+        time.text = "99";
     }
 }
