@@ -143,3 +143,4 @@ public class Character : MonoBehaviour
             //Take Damage
         }
     }
+}
