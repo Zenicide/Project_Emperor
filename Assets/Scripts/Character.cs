@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
 
     public Vector2 position;
     public Vector2 velocity;
-    const float deceleration = 0.2f;
+    const float deceleration = 0.07f;
 
     public bool isFacingRight = true;
     public bool jumped;
@@ -61,7 +61,7 @@ public class Character : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
         }
         position = transform.position;
-        velocity = new Vector2(.1f, 1.2f); //change values to change speed
+        velocity = new Vector2(.15f, 0.9f); //change values to change speed
 
         jumped = false;
 
@@ -82,15 +82,26 @@ public class Character : MonoBehaviour
     void Update()
     {
         InputKeys();
+        /*
         if (jumped == true)
         {
+            
+            velocity.y -= deceleration;
+            if(position.y <= -2)
+            {
+                position.y = -2;
+                jumped = false;
+            }
+            
             position.y -= Time.deltaTime * 3;
             if (position.y <= -2)
             {
                 position.y = -2;
                 jumped = false;
             }
+            
         }
+        */
         transform.position = position;
     }
 
@@ -98,11 +109,22 @@ public class Character : MonoBehaviour
     {
         if (player == 1)
         {
-            if (Input.GetKey(KeyCode.W) && !jumped) //up
+            if (Input.GetKeyUp(KeyCode.W) && !jumped) //up
             {
                 jumped = true;
-                position.y += velocity.y;
+                velocity.y = 0.9f;
             }
+            if (jumped)
+            {
+                velocity.y -= deceleration;
+                position.y += velocity.y;
+                if (position.y <= -1.9f)
+                {
+                    position.y = -2f;
+                    jumped = false;
+                }
+            }
+
             if (Input.GetKey(KeyCode.A)) //left
             {
                 if (isFacingRight)
@@ -196,10 +218,20 @@ public class Character : MonoBehaviour
         }
         else if (player == 2)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && !jumped) //up
+            if (Input.GetKeyUp(KeyCode.W) && !jumped) //up
             {
                 jumped = true;
+                velocity.y = 0.9f;
+            }
+            if (jumped)
+            {
+                velocity.y -= deceleration;
                 position.y += velocity.y;
+                if (position.y <= -1.9f)
+                {
+                    position.y = -2f;
+                    jumped = false;
+                }
             }
             if (Input.GetKey(KeyCode.LeftArrow)) //left
             {
