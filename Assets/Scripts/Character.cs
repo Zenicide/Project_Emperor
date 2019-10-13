@@ -82,26 +82,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         InputKeys();
-        /*
-        if (jumped == true)
-        {
-            
-            velocity.y -= deceleration;
-            if(position.y <= -2)
-            {
-                position.y = -2;
-                jumped = false;
-            }
-            
-            position.y -= Time.deltaTime * 3;
-            if (position.y <= -2)
-            {
-                position.y = -2;
-                jumped = false;
-            }
-            
-        }
-        */
         transform.position = position;
     }
 
@@ -208,7 +188,7 @@ public class Character : MonoBehaviour
         }
         else if (player == 2)
         {
-            if (Input.GetKeyUp(KeyCode.W) && !jumped) //up
+            if (Input.GetKeyUp(KeyCode.UpArrow) && !jumped) //up
             {
                 jumped = true;
                 velocity.y = 0.9f;
