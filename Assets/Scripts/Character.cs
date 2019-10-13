@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
-    public string player; //tracks if player one or two, ex "one" or "two"
-    public string leftOrRight; //tracks if player is facing left or right.
-
+    public int player;
     public float health; //health of fighter
     public float damageMultiplier; //damage you multiply to character's attacks
     public float rageBar;
@@ -17,6 +15,7 @@ public class Character : MonoBehaviour
     public Vector2 position;
     public Vector2 velocity;
 
+    public bool isFacingRight = true;
     public bool jumped;
 
     public List<Sprite> sprites;
@@ -28,14 +27,14 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player == "one")
+        if (player == 1)
         {
-            leftOrRight = "right";
+            isFacingRight = true;
             transform.position = new Vector2(0, -2);
         }
-        else if (player == "two")
+        else if (player == 2)
         {
-            leftOrRight = "left";
+            isFacingRight = false;
         }
         position = transform.position;
         velocity = new Vector2(.1f, 1.2f); //change values to change speed
@@ -67,7 +66,7 @@ public class Character : MonoBehaviour
 
     void InputKeys()
     {
-        if (player == "one")
+        if (player == 1)
         {
             if (Input.GetKey(KeyCode.W) && jumped == false) //up
             {
@@ -95,7 +94,7 @@ public class Character : MonoBehaviour
 
             }
         }
-        else if (player == "two")
+        else if (player == 2)
         {
             if (Input.GetKey(KeyCode.UpArrow)) //up
             {
