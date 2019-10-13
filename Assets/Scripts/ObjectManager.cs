@@ -15,7 +15,8 @@ public class ObjectManager : MonoBehaviour
     {
         playerOne = Instantiate(playerOnePrefab);
         playerOne.GetComponent<Character>().player = 1;
-        //playerTwo = Instantiate(playerTwoPrefab);
+        playerTwo = Instantiate(playerTwoPrefab);
+        playerTwo.GetComponent<Character>().player = 2;
 
     }
 

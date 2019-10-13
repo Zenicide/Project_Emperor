@@ -30,11 +30,13 @@ public class Character : MonoBehaviour
         if (player == 1)
         {
             isFacingRight = true;
-            transform.position = new Vector2(0, -2);
+            transform.position = new Vector2(-3, -2);
         }
         else if (player == 2)
         {
             isFacingRight = false;
+            transform.position = new Vector2(3, -2);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         position = transform.position;
         velocity = new Vector2(.1f, 1.2f); //change values to change speed
@@ -106,7 +108,7 @@ public class Character : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.RightArrow)) //right
             {
-                position.x += -velocity.x;
+                position.x += velocity.x;
             }
             if (Input.GetKey(KeyCode.Keypad1))
             {
