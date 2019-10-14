@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 97888850512934961}
   - component: {fileID: -8757337150065877409}
   - component: {fileID: 3266826672243226225}
-  - component: {fileID: 6108487055708454036}
   - component: {fileID: 8776451964205643302}
+  - component: {fileID: 6108487055708454036}
   m_Layer: 0
   m_Name: AresIdle_0
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2674570729108499857, guid: 86e35f31bba109c4c9bd135fded96478,
+  m_Sprite: {fileID: -1758672545711753463, guid: 199c54b02c9571b4c962a261daac2c28,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,6 +130,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &8776451964205643302
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329199144679096000}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6108487055708454036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,27 +177,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23772568, y: 0.97}
   m_EdgeRadius: 0
---- !u!50 &8776451964205643302
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329199144679096000}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1660541722095696812
 GameObject:
   m_ObjectHideFlags: 0

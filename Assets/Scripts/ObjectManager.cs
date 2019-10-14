@@ -20,10 +20,13 @@ public class ObjectManager : MonoBehaviour
     GameObject healthBarOne;
     GameObject healthBarTwo;
 
+    bool leftOf;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        leftOf = true;
         SpawnCharacter();
         SpawnUI();
     }
@@ -91,18 +94,24 @@ public class ObjectManager : MonoBehaviour
 
     void FacingRight()
     {
-        if (playerOne.transform.position.x < playerTwo.transform.position.x)
+        if (playerOne.transform.position.x < playerTwo.transform.position.x && !leftOf)
         {
-            playerOne.GetComponent<SpriteRenderer>().flipX = false;
+            leftOf = true;
+            //playerOne.GetComponent<SpriteRenderer>().flipX = false;
             playerOne.GetComponent<Character>().isFacingRight = true;
-            playerTwo.GetComponent<SpriteRenderer>().flipX = true;
+            playerOne.transform.localScale *= new Vector2(-1, 1);
+            //playerTwo.GetComponent<SpriteRenderer>().flipX = true;
+            playerTwo.transform.localScale *= new Vector2(-1, 1);
             playerTwo.GetComponent<Character>().isFacingRight = false;
         }
-        else if (playerOne.transform.position.x > playerTwo.transform.position.x)
+        else if (playerOne.transform.position.x > playerTwo.transform.position.x && leftOf)
         {
-            playerOne.GetComponent<SpriteRenderer>().flipX = true;
+            leftOf = false;
+            //playerOne.GetComponent<SpriteRenderer>().flipX = true;
+            playerOne.transform.localScale *= new Vector2(-1, 1);
             playerOne.GetComponent<Character>().isFacingRight = false;
-            playerTwo.GetComponent<SpriteRenderer>().flipX = false;
+            //playerTwo.GetComponent<SpriteRenderer>().flipX = false;
+            playerTwo.transform.localScale *= new Vector2(-1, 1);
             playerTwo.GetComponent<Character>().isFacingRight = true;
         }
     }

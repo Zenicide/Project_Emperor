@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
+    Animator Anim;
+
     public int player;
     public float health; //health of fighter
     public float damageMultiplier; //damage you multiply to character's attacks
@@ -17,9 +19,12 @@ public class Character : MonoBehaviour
 
     public bool isFacingRight = true;
     public bool jumped;
+    public bool crouched;
 
     public GameObject projectile;
     public List<GameObject> projectiles;
+
+    float projVelocity = 0.2f;
 
     public BoxCollider2D punchCollider;
     public BoxCollider2D kickCollider;
@@ -48,6 +53,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Anim = GetComponent<Animator>();
         health = 100;
         if (player == 1)
         {
@@ -58,7 +64,9 @@ public class Character : MonoBehaviour
         {
             isFacingRight = false;
             transform.position = new Vector2(3, -2);
-            GetComponent<SpriteRenderer>().flipX = true;
+            //GetComponent<SpriteRenderer>().flipX = true;
+            //transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            transform.localScale *= new Vector2(-1, 1);
         }
         position = transform.position;
         velocity = new Vector2(.15f, 0.9f); //change values to change speed
@@ -94,31 +102,46 @@ public class Character : MonoBehaviour
             {
                 jumped = true;
                 velocity.y = 0.9f;
+                Anim.SetBool("IsJumping", true);
             }
             if (jumped)
             {
                 velocity.y -= deceleration;
                 position.y += velocity.y;
+                Anim.SetFloat("VelocityY", velocity.y);
                 if (position.y <= -1.9f)
                 {
                     position.y = -2f;
                     jumped = false;
+                    Anim.SetBool("IsJumping", false);
                 }
             }
 
             if (Input.GetKey(KeyCode.A)) //left
             {
                 position.x -= velocity.x;
+                Anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                Anim.SetFloat("Speed", 0);
             }
             if (Input.GetKey(KeyCode.D)) //right
             {
                 position.x += velocity.x;
+                Anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                Anim.SetFloat("Speed", 0);
             }
 
             //detects if the player is trying to punch and the player is able to punch(not already in animation)
             if (Input.GetKey(KeyCode.J) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 punchCollider.enabled = true;
+                Anim.SetBool("isPunching", true);
             }
             //checks if punch collider is active 
             if (punchCollider.enabled)
@@ -131,6 +154,7 @@ public class Character : MonoBehaviour
                 //resets the punch collider to be false and reset the punch timer so it can be used again
                 punchCollider.enabled = false;
                 player1PunchTimer = resetCooldownTimer;
+                Anim.SetBool("isPunching", false);
             }
 
 
@@ -152,7 +176,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKey(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyUp(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 //get current player position
                 Vector2 startProj = transform.position;
@@ -166,8 +190,17 @@ public class Character : MonoBehaviour
                     startProj.x -= 0.5f;
                 }
 
-
-                projectiles.Add(Instantiate(projectile));
+                GameObject obj = Instantiate(projectile);
+                obj.transform.position = punchCollider.transform.position;
+                projectiles.Add(obj);
+                if (isFacingRight)
+                {
+                    obj.GetComponent<ProjectileManager>().velocity = projVelocity;
+                }else
+                {
+                    obj.GetComponent<ProjectileManager>().velocity = -projVelocity;
+                    obj.transform.localScale *= new Vector2(-1, 1);
+                }
                 projectiles[0].transform.position = startProj;
                 projCollider = projectile.GetComponent<BoxCollider2D>();
                 player1ProjAnim = true;
@@ -184,7 +217,7 @@ public class Character : MonoBehaviour
                 player1ProjTimer = resetCooldownTimer;
                 player1ProjAnim = false;
             }
-
+            
             
         }
         else if (player == 2)

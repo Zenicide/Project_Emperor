@@ -1,0 +1,736 @@
+fileFormatVersion: 2
+guid: 304f8d1ffdfb638418c9433193019e69
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6014296308845132119
+    second: ZeusSpritesheet_0
+  - first:
+      213: 8800367068718631887
+    second: ZeusSpritesheet_1
+  - first:
+      213: -5867689835385153086
+    second: ZeusSpritesheet_2
+  - first:
+      213: -6741918683560571517
+    second: ZeusSpritesheet_3
+  - first:
+      213: -8049266594228760736
+    second: ZeusSpritesheet_4
+  - first:
+      213: -3756915823400562828
+    second: ZeusSpritesheet_5
+  - first:
+      213: 4019845741770746585
+    second: ZeusSpritesheet_6
+  - first:
+      213: 1759215614674540998
+    second: ZeusSpritesheet_7
+  - first:
+      213: 3325749043688939843
+    second: ZeusSpritesheet_8
+  - first:
+      213: -2248662280969149693
+    second: ZeusSpritesheet_9
+  - first:
+      213: 1805224656186496385
+    second: ZeusSpritesheet_10
+  - first:
+      213: -3251918598611028861
+    second: ZeusSpritesheet_11
+  - first:
+      213: -4283037084893553487
+    second: ZeusSpritesheet_12
+  - first:
+      213: 3027494671680762524
+    second: ZeusSpritesheet_13
+  - first:
+      213: 5858895283285594113
+    second: ZeusSpritesheet_14
+  - first:
+      213: -4088315651681989759
+    second: ZeusSpritesheet_15
+  - first:
+      213: -1604827912808765437
+    second: ZeusSpritesheet_16
+  - first:
+      213: 4647384626258990270
+    second: ZeusSpritesheet_17
+  - first:
+      213: -2331125476121016085
+    second: ZeusSpritesheet_18
+  - first:
+      213: 8591497118196836870
+    second: ZeusSpritesheet_19
+  - first:
+      213: -3436252338502012537
+    second: ZeusSpritesheet_20
+  - first:
+      213: -5933862857562875539
+    second: ZeusSpritesheet_21
+  - first:
+      213: 8504611956111268982
+    second: ZeusSpritesheet_22
+  - first:
+      213: -493168912281405575
+    second: ZeusSpritesheet_23
+  - first:
+      213: -731072442876611367
+    second: ZeusSpritesheet_24
+  - first:
+      213: 5717421047837235727
+    second: ZeusSpritesheet_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ZeusSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1416
+        width: 47
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddbf52936b2dda488544f6709330f83
+      internalID: 6014296308845132119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1416
+        width: 47
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb320d0df3a60c478133b0814bc1a4e
+      internalID: 8800367068718631887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1416
+        width: 47
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ed1681ce7c3f44a890a174a3f18df5
+      internalID: -5867689835385153086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1418
+        width: 47
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93715d6e750d07342a952b79abb09d3b
+      internalID: -6741918683560571517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1300
+        width: 41
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a83f2983e426c48a48ab09ac814cc2
+      internalID: -8049266594228760736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1298
+        width: 42
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de1c02dddf65824fbbd15c29a853039
+      internalID: -3756915823400562828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1298
+        width: 41
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f8b53909256724bb6eb72284f3762f
+      internalID: 4019845741770746585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1298
+        width: 41
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda30760283148c47956190a07a84654
+      internalID: 1759215614674540998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1180
+        width: 60
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccd81a651dd6e246a48161f90cc67bf
+      internalID: 3325749043688939843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1183
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9becb1211d6ef439bc4bac40e5b70b
+      internalID: -2248662280969149693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1062
+        width: 41
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a23cc057079b0943a19515f552ed6c5
+      internalID: 1805224656186496385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1062
+        width: 72
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d766683def4c94595f8d70d7ec8e62
+      internalID: -3251918598611028861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 947
+        width: 55
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5571bc4185a46e54192a9b28a1ce3761
+      internalID: -4283037084893553487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 947
+        width: 80
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83d9a067fd6fc549b094641bae67314
+      internalID: 3027494671680762524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 829
+        width: 56
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ada49f0e7f0ac641b33af564304fa55
+      internalID: 5858895283285594113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 829
+        width: 85
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ab0af8013d836449e84691b953de39
+      internalID: -4088315651681989759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 711
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df0ceb5cee39af49a558016307baba0
+      internalID: -1604827912808765437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 711
+        width: 80
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd3fd8c02556a34cb72a27ede341748
+      internalID: 4647384626258990270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 594
+        width: 51
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8be90a1aee654148a6d676be552dc12
+      internalID: -2331125476121016085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 601
+        width: 66
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4a211b7ee295d49ac35a76c5ce7b1b
+      internalID: 8591497118196836870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 486
+        width: 55
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd41261bcc05f044b55b7707570dab8
+      internalID: -3436252338502012537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 485
+        width: 87
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c44b4f47a84bfb44bb7071183209a43
+      internalID: -5933862857562875539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 376
+        width: 66
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e7d8bbfe63c594089369d41148e982
+      internalID: 8504611956111268982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 378
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f413f251d5edb0240a573ab745ae925f
+      internalID: -493168912281405575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 239
+        width: 63
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa7ca053f4234b4d80cf129fba05913
+      internalID: -731072442876611367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZeusSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 239
+        width: 80
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4ea979df6db6f4095e257274bb44ef
+      internalID: 5717421047837235727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ab08252de4da5c24db4e98c5a8c75e63
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
