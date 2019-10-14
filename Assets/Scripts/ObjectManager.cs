@@ -36,7 +36,6 @@ public class ObjectManager : MonoBehaviour
 
         healthOne.transform.position = new Vector2(-5.1f + 7.7f / 100 * (playerOne.GetComponent<Character>().health - 100), healthOne.transform.position.y);
         healthTwo.transform.position = new Vector2(5.1f + 7.7f / 100 * (100 - playerTwo.GetComponent<Character>().health), healthTwo.transform.position.y);
-
         if (playerOne.GetComponent<Character>().health <= 0)
         {
             SceneManager.LoadScene(5);

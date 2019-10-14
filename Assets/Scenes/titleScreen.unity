@@ -747,7 +747,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638068354}
-  - component: {fileID: 638068353}
   - component: {fileID: 638068355}
   m_Layer: 0
   m_Name: sceneHandler
@@ -756,18 +755,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &638068353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638068352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45551fddd9734e9448082fbb7fe9e6b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &638068354
 Transform:
   m_ObjectHideFlags: 0

@@ -21,11 +21,7 @@ public class timerHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time == 0)
-        {
-            SceneManager.LoadScene(5);
-        }
-        else // tick down time using frames, preferably 60 fps
+        if (time > 0) // tick down time using frames, preferably 60 fps
         {
             frames--;
             if (frames == 0)
