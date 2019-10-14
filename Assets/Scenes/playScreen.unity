@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOnePrefab: {fileID: 5537062977744745634, guid: 7bef681f8dde7084b9650bc47d63544f,
     type: 3}
-  playerTwoPrefab: {fileID: 8890006859745632462, guid: 1f7533eedc3c5104ba939b490a7e84b9,
+  playerTwoPrefab: {fileID: 901172347578895491, guid: d1ff384e7102afa4b9e62422a9d22b76,
     type: 3}
   healthPrefab: {fileID: 1810460935479836735, guid: b070c778e8c8f78498edd499bb3993df,
     type: 3}

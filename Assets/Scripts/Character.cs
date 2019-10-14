@@ -98,12 +98,6 @@ public class Character : MonoBehaviour
     {
         if (player == 1)
         {
-            if (Input.GetKeyUp(KeyCode.W) && !jumped) //up
-            {
-                jumped = true;
-                velocity.y = 0.9f;
-                Anim.SetBool("IsJumping", true);
-            }
             if (jumped)
             {
                 velocity.y -= deceleration;
@@ -113,32 +107,45 @@ public class Character : MonoBehaviour
                 {
                     position.y = -2f;
                     jumped = false;
-                    Anim.SetBool("IsJumping", false);
+                    Anim.SetBool("isJumping", false);
                 }
             }
-
-            if (Input.GetKey(KeyCode.A)) //left
+            
+            
+            if (Input.GetKey(KeyCode.S)) //down
+            {
+                Anim.SetBool("isCrouching", true);
+            }
+            if (Input.GetKeyUp(KeyCode.W) && !jumped) //up
+            {
+                jumped = true;
+                velocity.y = 0.9f;
+                Anim.SetBool("isJumping", true);
+            }
+            if (Input.GetKey(KeyCode.S)) //down
+            {
+                Anim.SetBool("isCrouching", true);
+            }
+            else if (Input.GetKey(KeyCode.A)) //left
             {
                 position.x -= velocity.x;
                 Anim.SetFloat("Speed", Mathf.Abs(velocity.x));
 
             }
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                Anim.SetFloat("Speed", 0);
-            }
-            if (Input.GetKey(KeyCode.D)) //right
+            else if (Input.GetKey(KeyCode.D)) //right
             {
                 position.x += velocity.x;
                 Anim.SetFloat("Speed", Mathf.Abs(velocity.x));
             }
-            if (Input.GetKeyUp(KeyCode.D))
+            
+
+            if (Input.GetKeyUp(KeyCode.A))
             {
                 Anim.SetFloat("Speed", 0);
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKeyUp(KeyCode.D))
             {
-                Anim.SetBool("isCrouching", true);
+                Anim.SetFloat("Speed", 0);
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
@@ -146,7 +153,7 @@ public class Character : MonoBehaviour
             }
 
             //detects if the player is trying to punch and the player is able to punch(not already in animation)
-            if (Input.GetKey(KeyCode.J) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.J) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 punchCollider.enabled = true;
                 Anim.SetBool("isPunching", true);
@@ -166,7 +173,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKey(KeyCode.K) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.K) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 kickCollider.enabled = true;
                 Anim.SetBool("isKicking", true);
@@ -186,7 +193,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKeyUp(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 //get current player position
                 Vector2 startProj = transform.position;
@@ -211,7 +218,7 @@ public class Character : MonoBehaviour
                     obj.GetComponent<ProjectileManager>().velocity = -projVelocity;
                     obj.transform.localScale *= new Vector2(-1, 1);
                 }
-                projectiles[0].transform.position = startProj;
+                //projectiles[0].transform.position = startProj;
                 projCollider = projectile.GetComponent<BoxCollider2D>();
                 player1ProjAnim = true;
                 Anim.SetBool("isThrowing", true);
@@ -234,7 +241,150 @@ public class Character : MonoBehaviour
         }
         else if (player == 2)
         {
+            if (jumped)
+            {
+                velocity.y -= deceleration;
+                position.y += velocity.y;
+                Anim.SetFloat("VelocityY", velocity.y);
+                if (position.y <= -1.9f)
+                {
+                    position.y = -2f;
+                    jumped = false;
+                    Anim.SetBool("isJumping", false);
+                }
+            }
+
+
+            if (Input.GetKey(KeyCode.DownArrow)) //down
+            {
+                Anim.SetBool("isCrouching", true);
+            }
             if (Input.GetKeyUp(KeyCode.UpArrow) && !jumped) //up
+            {
+                jumped = true;
+                velocity.y = 0.9f;
+                Anim.SetBool("isJumping", true);
+            }
+            if (Input.GetKey(KeyCode.DownArrow)) //down
+            {
+                Anim.SetBool("isCrouching", true);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow)) //left
+            {
+                position.x -= velocity.x;
+                Anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+
+            }
+            else if (Input.GetKey(KeyCode.RightArrow)) //right
+            {
+                position.x += velocity.x;
+                Anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+            }
+
+
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                Anim.SetFloat("Speed", 0);
+            }
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                Anim.SetFloat("Speed", 0);
+            }
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                Anim.SetBool("isCrouching", false);
+            }
+
+            //detects if the player is trying to punch and the player is able to punch(not already in animation)
+            if (Input.GetKeyDown(KeyCode.Keypad1) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            {
+                punchCollider.enabled = true;
+                Anim.SetBool("isPunching", true);
+            }
+            //checks if punch collider is active 
+            if (punchCollider.enabled)
+            {
+                player1PunchTimer--;
+            }
+            //checks if the player's punch timer is at 0
+            if (player1PunchTimer == 0)
+            {
+                //resets the punch collider to be false and reset the punch timer so it can be used again
+                punchCollider.enabled = false;
+                player1PunchTimer = resetCooldownTimer;
+                Anim.SetBool("isPunching", false);
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Keypad2) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            {
+                kickCollider.enabled = true;
+                Anim.SetBool("isKicking", true);
+            }
+            //checks if kick collider is active 
+            if (kickCollider.enabled)
+            {
+                player1KickTimer--;
+            }
+            //checks if the player's kick timer is at 0
+            if (player1KickTimer == 0)
+            {
+                //resets the kick collider to be false and reset the kick timer so it can be used again
+                kickCollider.enabled = false;
+                player1KickTimer = resetCooldownTimer;
+                Anim.SetBool("isKicking", false);
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Keypad3) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            {
+                //get current player position
+                Vector2 startProj = transform.position;
+
+                if (isFacingRight)
+                {
+                    startProj.x += 0.5f;
+                }
+                else
+                {
+                    startProj.x -= 0.5f;
+                }
+
+                GameObject obj = Instantiate(projectile);
+                obj.transform.position = punchCollider.transform.position;
+                projectiles.Add(obj);
+                if (isFacingRight)
+                {
+                    obj.GetComponent<ProjectileManager>().velocity = projVelocity;
+                }
+                else
+                {
+                    obj.GetComponent<ProjectileManager>().velocity = -projVelocity;
+                    obj.transform.localScale *= new Vector2(-1, 1);
+                }
+                //projectiles[0].transform.position = startProj;
+                projCollider = projectile.GetComponent<BoxCollider2D>();
+                player1ProjAnim = true;
+                Anim.SetBool("isThrowing", true);
+            }
+            //checks to see if the player is in the projectile throwing animation
+            if (player1ProjAnim)
+            {
+                player1ProjTimer--;
+            }
+            //checks to see if the player's proj timer is at 0
+            if (player1ProjTimer == 0)
+            {
+                //reset the animation and the timer for the projectile animation
+                player1ProjTimer = resetCooldownTimer;
+                player1ProjAnim = false;
+                Anim.SetBool("isThrowing", false);
+            }
+
+
+
+
+            /*if (Input.GetKeyUp(KeyCode.UpArrow) && !jumped) //up
             {
                 jumped = true;
                 velocity.y = 0.9f;
@@ -310,7 +460,7 @@ public class Character : MonoBehaviour
                 //reset the animation and the timer for the projectile animation
                 player2ProjTimer = resetCooldownTimer;
                 player2ProjAnim = false;
-            }
+            }*/
         }
     }
 
