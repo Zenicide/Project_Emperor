@@ -136,6 +136,14 @@ public class Character : MonoBehaviour
             {
                 Anim.SetFloat("Speed", 0);
             }
+            if (Input.GetKey(KeyCode.S))
+            {
+                Anim.SetBool("isCrouching", true);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                Anim.SetBool("isCrouching", false);
+            }
 
             //detects if the player is trying to punch and the player is able to punch(not already in animation)
             if (Input.GetKey(KeyCode.J) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
@@ -161,6 +169,7 @@ public class Character : MonoBehaviour
             if (Input.GetKey(KeyCode.K) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
             {
                 kickCollider.enabled = true;
+                Anim.SetBool("isKicking", true);
             }
             //checks if kick collider is active 
             if (kickCollider.enabled)
@@ -173,6 +182,7 @@ public class Character : MonoBehaviour
                 //resets the kick collider to be false and reset the kick timer so it can be used again
                 kickCollider.enabled = false;
                 player1KickTimer = resetCooldownTimer;
+                Anim.SetBool("isKicking", false);
             }
 
 
@@ -204,6 +214,7 @@ public class Character : MonoBehaviour
                 projectiles[0].transform.position = startProj;
                 projCollider = projectile.GetComponent<BoxCollider2D>();
                 player1ProjAnim = true;
+                Anim.SetBool("isThrowing", true);
             }
             //checks to see if the player is in the projectile throwing animation
             if (player1ProjAnim)
@@ -216,6 +227,7 @@ public class Character : MonoBehaviour
                 //reset the animation and the timer for the projectile animation
                 player1ProjTimer = resetCooldownTimer;
                 player1ProjAnim = false;
+                Anim.SetBool("isThrowing", false);
             }
             
             
