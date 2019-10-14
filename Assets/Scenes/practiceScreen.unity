@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd56de55cabcde74a9f222f397889bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOnePrefab: {fileID: 329199144679096000, guid: fe7bbb818e7a22c4284f0cab3a4c316a,
+  playerOnePrefab: {fileID: 5537062977744745634, guid: 7bef681f8dde7084b9650bc47d63544f,
     type: 3}
   playerTwoPrefab: {fileID: 0}
   healthPrefab: {fileID: 0}
