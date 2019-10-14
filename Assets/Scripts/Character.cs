@@ -31,7 +31,8 @@ public class Character : MonoBehaviour
     BoxCollider2D projCollider;
 
     //internal cooldown timer so they can't do the same action again
-    const int resetCooldownTimer = 4;
+    const int resetCooldownTimer = 18;
+    const int actionframeTime = 18;
     int player1PunchTimer;
     int player1KickTimer;
     int player1ProjTimer;
@@ -74,13 +75,13 @@ public class Character : MonoBehaviour
         jumped = false;
 
         //setting timers for each action
-        player1PunchTimer = 4;
-        player1KickTimer = 4;
-        player1ProjTimer = 4;
+        player1PunchTimer = actionframeTime;
+        player1KickTimer = actionframeTime;
+        player1ProjTimer = actionframeTime;
 
-        player2PunchTimer = 4;
-        player2KickTimer = 4;
-        player2ProjTimer = 4;
+        player2PunchTimer = actionframeTime;
+        player2KickTimer = actionframeTime;
+        player2ProjTimer = actionframeTime;
 
         projectiles = new List<GameObject>();
 
@@ -116,7 +117,7 @@ public class Character : MonoBehaviour
             {
                 Anim.SetBool("isCrouching", true);
             }
-            if (Input.GetKeyUp(KeyCode.W) && !jumped) //up
+            if (Input.GetKeyDown(KeyCode.W) && !jumped) //up
             {
                 jumped = true;
                 velocity.y = 0.9f;
@@ -153,7 +154,7 @@ public class Character : MonoBehaviour
             }
 
             //detects if the player is trying to punch and the player is able to punch(not already in animation)
-            if (Input.GetKeyDown(KeyCode.J) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.J) && player1PunchTimer == actionframeTime && player1KickTimer == actionframeTime && player1ProjTimer == actionframeTime)
             {
                 punchCollider.enabled = true;
                 Anim.SetBool("isPunching", true);
@@ -173,7 +174,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.K) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.K) && player1PunchTimer == actionframeTime && player1KickTimer == actionframeTime && player1ProjTimer == actionframeTime)
             {
                 kickCollider.enabled = true;
                 Anim.SetBool("isKicking", true);
@@ -193,7 +194,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.L) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.L) && player1PunchTimer == actionframeTime && player1KickTimer == actionframeTime && player1ProjTimer == actionframeTime)
             {
                 //get current player position
                 Vector2 startProj = transform.position;
@@ -209,6 +210,14 @@ public class Character : MonoBehaviour
 
                 GameObject obj = Instantiate(projectile);
                 obj.transform.position = punchCollider.transform.position;
+                if (isFacingRight)
+                {
+                    obj.transform.position += new Vector3(2, 1, 0);
+                }
+                else
+                {
+                    obj.transform.position += new Vector3(-2, 1, 0);
+                }
                 projectiles.Add(obj);
                 if (isFacingRight)
                 {
@@ -259,7 +268,7 @@ public class Character : MonoBehaviour
             {
                 Anim.SetBool("isCrouching", true);
             }
-            if (Input.GetKeyUp(KeyCode.UpArrow) && !jumped) //up
+            if (Input.GetKeyDown(KeyCode.UpArrow) && !jumped) //up
             {
                 jumped = true;
                 velocity.y = 0.9f;
@@ -296,7 +305,7 @@ public class Character : MonoBehaviour
             }
 
             //detects if the player is trying to punch and the player is able to punch(not already in animation)
-            if (Input.GetKeyDown(KeyCode.Keypad1) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.Keypad1) && player1PunchTimer == actionframeTime && player1KickTimer == actionframeTime && player1ProjTimer == actionframeTime)
             {
                 punchCollider.enabled = true;
                 Anim.SetBool("isPunching", true);
@@ -316,7 +325,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Keypad2) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.Keypad2) && player1PunchTimer == actionframeTime && player1KickTimer == actionframeTime && player1ProjTimer == actionframeTime)
             {
                 kickCollider.enabled = true;
                 Anim.SetBool("isKicking", true);
@@ -336,7 +345,7 @@ public class Character : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Keypad3) && player1PunchTimer == 4 && player1KickTimer == 4 && player1ProjTimer == 4)
+            if (Input.GetKeyDown(KeyCode.Keypad3) && player1PunchTimer == actionframeTime && player1KickTimer == actionframeTime && player1ProjTimer == actionframeTime)
             {
                 //get current player position
                 Vector2 startProj = transform.position;
@@ -349,9 +358,18 @@ public class Character : MonoBehaviour
                 {
                     startProj.x -= 0.5f;
                 }
+                
 
                 GameObject obj = Instantiate(projectile);
                 obj.transform.position = punchCollider.transform.position;
+                if (isFacingRight)
+                {
+                    obj.transform.position += new Vector3(2, 1,0);
+                }
+                else
+                {
+                    obj.transform.position += new Vector3(-2, 1, 0);
+                }
                 projectiles.Add(obj);
                 if (isFacingRight)
                 {
@@ -380,87 +398,6 @@ public class Character : MonoBehaviour
                 player1ProjAnim = false;
                 Anim.SetBool("isThrowing", false);
             }
-
-
-
-
-            /*if (Input.GetKeyUp(KeyCode.UpArrow) && !jumped) //up
-            {
-                jumped = true;
-                velocity.y = 0.9f;
-            }
-            if (jumped)
-            {
-                velocity.y -= deceleration;
-                position.y += velocity.y;
-                if (position.y <= -1.9f)
-                {
-                    position.y = -2f;
-                    jumped = false;
-                }
-            }
-            if (Input.GetKey(KeyCode.LeftArrow)) //left
-            {
-                position.x -= velocity.x;
-            }
-            if (Input.GetKey(KeyCode.RightArrow)) //right
-            {
-                position.x += velocity.x;
-            }
-            if (Input.GetKey(KeyCode.Keypad1) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
-            {
-                punchCollider.enabled = true;
-            }
-            //checks if punch collider is active 
-            if (punchCollider.enabled)
-            {
-                player2PunchTimer--;
-            }
-            //checks if the player's punch timer is at 0
-            if (player2PunchTimer == 0)
-            {
-                //resets the punch collider to be false and reset the punch timer so it can be used again
-                punchCollider.enabled = false;
-                player2PunchTimer = resetCooldownTimer;
-            }
-
-
-            if (Input.GetKey(KeyCode.Keypad2) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
-            {
-                kickCollider.enabled = true;
-            }
-            //checks if kick collider is active 
-            if (kickCollider.enabled)
-            {
-                player2KickTimer--;
-            }
-            //checks if the player's kick timer is at 0
-            if (player2KickTimer == 0)
-            {
-                //resets the kick collider to be false and reset the kick timer so it can be used again
-                kickCollider.enabled = false;
-                player2KickTimer = resetCooldownTimer;
-            }
-
-
-            if (Input.GetKey(KeyCode.Keypad3) && player2PunchTimer == 4 && player2KickTimer == 4 && player2ProjTimer == 4)
-            {
-                Instantiate(projectile);
-                projCollider = projectile.GetComponent<BoxCollider2D>();
-                player2ProjAnim = true;
-            }
-            //checks to see if the player is in the projectile throwing animation
-            if (player2ProjAnim)
-            {
-                player2ProjTimer--;
-            }
-            //checks to see if the player's proj timer is at 0
-            if (player2ProjTimer == 0)
-            {
-                //reset the animation and the timer for the projectile animation
-                player2ProjTimer = resetCooldownTimer;
-                player2ProjAnim = false;
-            }*/
         }
     }
 
