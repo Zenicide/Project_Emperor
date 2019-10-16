@@ -405,16 +405,17 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.name == "punch")
         {
-            Debug.Log("Hit");
             //Take Damage
             health -= 3;
             if (isFacingRight)
             {
                 transform.Translate(new Vector3(-100000f, 0, 0));
+                position += new Vector2(-.5f, 0);
             }
             else
             {
                 transform.Translate(new Vector3(0.05f, 0, 0));
+                position += new Vector2(.5f, 0);
             }
         }
         if (collision.gameObject.name == "kick")
@@ -424,24 +425,29 @@ public class Character : MonoBehaviour
             if (isFacingRight)
             {
                 transform.Translate(new Vector3(-0.08f, 0, 0));
+                position += new Vector2(.5f, 0);
             }
             else
             {
                 transform.Translate(new Vector3(0.08f, 0, 0));
+                position += new Vector2(.5f, 0);
             }
         }
         if (collision.gameObject.name == "proj")
         {
             //take damage
-            health -= 5;
+            health -= 1;
             if (isFacingRight)
             {
+                position += new Vector2(-.5f, 0);
                 transform.Translate(new Vector3(-0.1f, 0, 0));
             }
             else
             {
                 transform.Translate(new Vector3(0.1f, 0, 0));
+                position += new Vector2(.5f, 0);
             }
+            Destroy(collision.gameObject);
         }
     }
 
